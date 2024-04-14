@@ -39,4 +39,4 @@ def download_arquivo(ano_ini, ano_final, tipo_pessoa):
     driver.quit()
 
 # Example usage:
-download_arquivo(1993, 2024, "Pessoa Jurídica")
+download_arquivo(2024, 2024, "Pessoa Jurídica")
