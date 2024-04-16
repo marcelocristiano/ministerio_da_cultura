@@ -4,9 +4,25 @@ from selenium.webdriver.support.ui import Select
 import time
 import os
 import requests
+<<<<<<< HEAD
 import pandas as pd
+=======
 
+def download_arquivo(ano_ini, ano_final, tipo_pessoa):
+    # Configurações para o download do arquivo
+    prefs = {
+        "download.name": "teste",
+        "download.default_directory": r"C:\Projetos-Python\ministerio_da_cultura\repository\bronze\ministerio da cultura\{}".format(tipo_pessoa)
+    }
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option("prefs", prefs)
+    options.add_argument('--headless')
+>>>>>>> refs/remotes/origin/main
 
+    # Inicializando o driver do Chrome
+    driver = webdriver.Chrome(options=options)
+
+<<<<<<< HEAD
 def download_arquivo(ano_ini, ano_final, tipo_pessoa):
     # Configurações para o download do arquivo
     prefs = {
@@ -23,6 +39,11 @@ def download_arquivo(ano_ini, ano_final, tipo_pessoa):
     # URL do site
     url = "http://sistemas.cultura.gov.br/salicnet/ctrIncentivadorMecenatoPorRegiaoUF/ctrIncentivadorMecenatoPorRegiaoUF.php"
 
+=======
+    # URL do site
+    url = "http://sistemas.cultura.gov.br/salicnet/ctrIncentivadorMecenatoPorRegiaoUF/ctrIncentivadorMecenatoPorRegiaoUF.php"
+
+>>>>>>> refs/remotes/origin/main
     # Iterando sobre os anos especificados
     for ano in range(ano_ini, ano_final + 1):
         msg = "Download ano " + str(ano)
@@ -52,7 +73,11 @@ def download_arquivo(ano_ini, ano_final, tipo_pessoa):
         url_dowload = "http://sistemas.cultura.gov.br{}".format(link_download)
 
         # Diretório base para salvar o arquivo
+<<<<<<< HEAD
         diretorio_base = r"C:\Users\DW8R\OneDrive - PETROBRAS\Documentos\projetos_python\ministerio_da_cultura\repository\bronze\ministerio da cultura"
+=======
+        diretorio_base = r"C:\Projetos-Python\ministerio_da_cultura\repository\bronze\ministerio da cultura"
+>>>>>>> refs/remotes/origin/main
         nome_pasta = tipo_pessoa
 
         # Caminho da pasta para o tipo de pessoa
@@ -76,6 +101,7 @@ def download_arquivo(ano_ini, ano_final, tipo_pessoa):
 
     # Fechando o driver do Chrome
     driver.quit()
+<<<<<<< HEAD
 
 
 def transformar_dado_silver(tipo_pessoa):
@@ -129,3 +155,5 @@ def transformar_dado_gold(tipo_pessoa):
         df = pd.concat(dfs, ignore_index=True)
         # Salva o DataFrame como arquivo Parquet
         df.to_parquet(os.path.join(diretorio_gold, arquivo_parquet))
+=======
+>>>>>>> refs/remotes/origin/main

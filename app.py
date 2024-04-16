@@ -23,6 +23,7 @@ def busca_dado():
     for i in scraping.download_arquivo(ano_ini, ano_fim, tipo_pessoa):
         l_msg.config(text= i)
         app.update_idletasks()
+<<<<<<< HEAD
     l_msg.config(text='Dowloads Concluídos')
     for j in scraping.transformar_dado_silver(tipo_pessoa):
         l_msg.config(text= i)
@@ -30,6 +31,9 @@ def busca_dado():
         l_msg.config(text='Processando Dados...')
     scraping.transformar_dado_gold(tipo_pessoa)
     l_msg.config(text='Processo Concluídos')
+=======
+    l_msg.config(text='Dowloads Concluídos')   
+>>>>>>> refs/remotes/origin/main
 
 # Carrega a imagem
 image = PhotoImage(file='img/logo-govbr.png')  # Substitua com o caminho correto da sua imagem
@@ -67,7 +71,11 @@ c_ano_fim.grid(column=2, row=1, padx=5, pady=5, sticky='w')
 l_tipo_pessoa = ttk.Label(f_ano, text='Tipo de Pessoa:', font=("Arial", 10))
 l_tipo_pessoa.grid(column=1, row=2, sticky='w')
 
+<<<<<<< HEAD
 l_tipo_pessoa = ['Pessoa Jurídica']
+=======
+l_tipo_pessoa = ['Pessoa Física', 'Pessoa Jurídica']
+>>>>>>> refs/remotes/origin/main
 # Criando uma caixa de combinação para selecionar o tipo de pessoa, alinhada à esquerda
 c_tipo_pessoa = ttk.Combobox(f_ano, width=13, values=l_tipo_pessoa)
 c_tipo_pessoa.grid(column=2, row=2, padx=5, pady=5, sticky='w')
